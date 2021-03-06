@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, {useState } from "react";
 import Trajectory from "./trajectory";
 
 function App() {
@@ -14,7 +14,6 @@ function App() {
   });
 
   const [totalTime, setTotalTime] = useState(0);
-  const [drift, setDrift] = useState(0);
 
   function calcTotalTime() {
     let time =
@@ -28,7 +27,7 @@ function App() {
       ((values.vm * Math.cos(degrees_to_radians(values.angle)) + values.vr) *
         values.rw) /
       (values.vm * Math.sin(degrees_to_radians(values.angle)));
-    setDrift(drift);
+    // setDrift(drift);
     return drift;
   }
 

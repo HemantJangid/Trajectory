@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { BallMovement } from "./ballmovement";
 
 const Trajectory = (props) => {
@@ -9,7 +9,6 @@ const Trajectory = (props) => {
     x: 0,
     y: props.height * 50,
     dx: (props.calcDrift() * 5) / props.height,
-    // dx: 5,
     dy: -5,
     rad: 2,
     speed: 10,
@@ -19,7 +18,6 @@ const Trajectory = (props) => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
     const render = () => {
-      // ballObj.dy = props.calcDrift() * (5 / props.height);
       BallMovement(ctx, ballObj);
 
       if (ballObj.y <= 0) {
@@ -31,8 +29,7 @@ const Trajectory = (props) => {
     };
     render();
   };
-  function clearRect() {}
-  // console.log(ctx);
+
 
   return (
     <div>
@@ -49,11 +46,6 @@ const Trajectory = (props) => {
             props.calcDrift();
             props.calcTotalTime();
             plotTrajectory();
-            // console.log("river width: ", props.height);
-            // console.log("total drift: ", props.calcDrift());
-            // console.log("total time: ", props.calcTotalTime());
-            // console.log("dx: ", ballObj.dx);
-            // console.log("dy: ", ballObj.dy);
           }}
         >
           Plot Trajectory
