@@ -25,30 +25,41 @@ body,
   justify-content: center;
   flex-direction: column;
   padding-left: 100px;
+  /* background-color: red; */
 }
 
-.container .left .controls {
+.container .left .controls-container {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.container .left .controls-container .controls {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
+  max-width: 300px;
+  /* background-color: brown; */
 }
 
-.container .left .controls:first-child {
+.container .left .controls-container .controls:first-child {
   margin-top: 0px;
 }
 
-.container .left .controls .control {
+.container .left .controls-container .controls .control {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-top: 10px;
 }
 
-.container .left .controls .control h4 {
+.container .left .controls-container .controls .control h4 {
   margin-right: 20px;
 }
 
-.container .left .controls .control button {
+.container .left .controls-container .controls .control button {
   margin: 0px 20px 0px 0px;
   height: 40px;
   width: 40px;
@@ -83,4 +94,36 @@ body,
 
 .container .right #canvas {
   background-color: lightblue;
+}
+
+@media screen and (max-width: 1150px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+    margin: 50px 0px;
+  }
+
+  .container .left {
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container .left .controls-container {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  .container .left .controls-container .controls {
+    margin: 30px 30px;
+  }
+
+  .container .right {
+    width: 100%;
+    padding: 50px 0px;
+    justify-content: center;
+  }
 }
